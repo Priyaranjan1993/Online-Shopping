@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.bean.Order" table="P2E_ORDER">
+        <id name="orderId" type="int">
+            <column name="ORDERID" />
+            <generator class="assigned" />
+        </id>
+        <property name="productDetails" type="java.lang.String">
+            <column name="PRODUCTDETAILS" />
+        </property>
+        <property name="mrpAmount" type="double">
+            <column name="MRPAMOUNT" />
+        </property>
+        <property name="discountAmount" type="double">
+            <column name="DISCOUNTAMOUNT" />
+        </property>
+        <property name="rebateAmount" type="double">
+            <column name="REBATEAMOUNT" />
+        </property>
+        <property name="tax" type="double">
+            <column name="TAX" />
+        </property>
+        <property name="finalAmount" type="double">
+            <column name="FINALAMOUNT" />
+        </property>
+        <property name="orderStatus" type="java.lang.String">
+            <column name="ORDERSTATUS" />
+        </property>
+        <property name="purchaseDate" type="java.util.Date">
+            <column name="PURCHASEDATE" />
+        </property>
+        <property name="modeOfPayment" type="java.lang.String">
+            <column name="MODEOFPAYMENT" />
+        </property>
+        <property name="customerId"  type="int">
+            <column name="CUSTOMERID" />
+        </property>
+        <property name="discountId" type="int">
+            <column name="DISCOUNTID" />
+        </property>
+        <property name="billingAddress" type="java.lang.String">
+            <column name="BILLINGADDRESS" />
+        </property>
+        <property name="billingAddressCity" type="java.lang.String">
+            <column name="BILLINGADDRESSCITY" />
+        </property>
+        <property name="deliveryAddress" type="java.lang.String">
+            <column name="DELIVERYADDRESS" />
+        </property>
+        <property name="deliveryAddressCity" type="java.lang.String">
+            <column name="DELIVERYADDRESSCITY" />
+        </property>
+        <property name="salesExecutiveId" type="int">
+            <column name="SALESEXECUTIVEID" />
+        </property>
+        <property name="deliveryExecutiveId" type="int">
+            <column name="DELIVERYEXECUTIVEID" />
+        </property>
+        <property name="transactionId" type="int">
+            <column name="TRANSACTIONID" />
+        </property>
+    </class>
+</hibernate-mapping>

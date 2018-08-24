@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.devMode" value="false"/>
+	<!-- <constant name="struts.custom.i18n.resources" value="com.resource.resource"></constant> -->
+
+
+	<package name="com" namespace="/" extends="struts-default">
+		<!-- <default-action-ref name="login"></default-action-ref> -->
+		<!-- <action name="login" >
+		<result>/jsp/Login.jsp</result>
+		</action> -->
+		
+		
+			<action name="UserCheckAction" class="com.action.UserCheckAction" method="check">
+		<result name="se">/se.jsp</result>
+		<result name="de">/DeliveryExecutiveHome.jsp</result>
+		<result name="MD">/MDHomePage.jsp</result>
+		<result name="smh">/SMHHomePage.jsp</result>
+		<result name="cust">/cust.jsp</result>
+		<result name="error">/index.jsp</result>
+
+		</action>
+		
+		<action name="getOrderIds"  class="com.action.DeliveryAction" method="getOrderIds"> 
+		<result name="success">/orderdetails.jsp</result> 
+ 		</action> 
+		
+		
+		<action name="viewStatus"  class="com.action.DeliveryAction" method="register">
+		<result >/updateStatus.jsp</result>
+		</action>
+		
+		<action name="updateStatus" class="com.action.DeliveryAction" method="update"> 
+  <result name="success">/updateDeSuccess.jsp</result>
+    <result name="failure">/error.jsp</result>
+</action>
+         
+         
+		<action name="login"  class="com.action.DeliveryAction" method="seOrders">
+		<result >/seOrders.jsp</result>
+		</action>
+		
+		  <action name="selectcity"  class="com.action.SalesExecutiveAction" method="selectcity">
+		<result >/selectDE.jsp</result>
+		</action>
+		
+		<action name="assignDE" class="com.action.DeliveryAction" method="assignDE"> 
+  <result name="success">/updateDeSuccess.jsp</result>
+    <result name="failure">/error.jsp</result>
+</action>
+		
+		
+		 
+		 <!-- 	<action name="UserCheckAction" >
+		<result>/jsp/home.jsp</result> -->
+	
+
+		<!-- </action> -->
+<!-- 		<action name="home" class="com.action.CustomerAction" method="assign">
+		
+
+		</action>
+		
+		<action name="getOrderIds" class="com.action.CustomerAction" method="getOrderIds">
+		<result name="success">/jsp/payment.jsp</result>
+		<result name="failure">/jsp/home.jsp</result>
+		<result name="input">/jsp/home.jsp</result>
+		</action>
+		
+	
+		 -->
+		
+		
+		
+		
+		
+		
+		
+		<action name="viewPendingDiscounts" class="com.action.DiscountAction" method="viewDiscounts">
+<result name="success">/viewDiscounts.jsp</result>
+</action>
+ 
+<action name="viewAllDiscounts" class="com.action.DiscountAction" method="viewAllDiscounts">
+<result name="success">/viewAllDiscounts.jsp</result>
+</action>
+ 
+ <action name="show">
+ <result >/registerDiscount.jsp</result>
+ </action>
+
+<action name="update" class="com.action.DiscountAction" method="approveDiscount">
+<interceptor-ref name="params"></interceptor-ref>
+<result name="success">/success.jsp</result>
+<result name="error">/viewDiscounts.jsp</result>
+</action>
+
+<action name="reject" class="com.action.DiscountAction" method="rejectDiscount">
+<interceptor-ref name="params"></interceptor-ref>
+<result name="success">/success.jsp</result>
+<result name="error">/viewDiscounts.jsp</result>
+</action>
+
+
+<action name="discountRegister"  class="com.action.DiscountAction" method="addDiscount">
+<result name="success">/success.jsp</result>
+<result name="failure">/registerDiscount.jsp</result>
+<result name="error">/registerDiscount.jsp</result>
+<result name="input">/addDiscountPage.jsp</result>
+</action>
+		
+       		
+	</package>
+</struts>
